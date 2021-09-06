@@ -8,8 +8,6 @@ def update():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
 
-    all_results ={}
-
     url = "https://redplanetscience.com/"
     browser.visit(url)
 
@@ -69,7 +67,7 @@ def update():
     hemisphere_urls = []
 
     for item in hemi_items:
-        hemisphere_urls.append(f"{hemi_url}{item.find('a', class_='itemLink')['href']}")
+        hemisphere_urls.append(f"{hemi_url}{hemi_items.find('a', class_='itemLink')['href']}")
 
     print(hemisphere_urls)
 
