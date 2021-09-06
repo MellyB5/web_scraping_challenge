@@ -15,18 +15,18 @@
           <p><a class="btn btn-primary btn-lg" href="/update" role="button">Scrape New Data</a></p>
         </div>
         <h2><strong>Latest Mars News</strong></h2>
-        <h3><strong>{{ mars_db.news_title }}</strong></h3>
+        <h3><strong>{{ data.news_title }}</strong></h3>
         <h3>{{ mars_db.news_p }}</h3>
         <br>
     
         <div class="row">
           <div class="col-md-6 align-self-start">
             <h2><strong>Featured Mars Image</strong></h2>
-            <img src={{ mars_db.featured_image_url }} alt="Mars Featured Image">
+            <img src={{ data.featured_image_url }} alt="Mars Featured Image">
           </div>
           <div class="col-md-6 align-self-end text-center">
             <h2><strong>Mars Facts</strong></h2>
-            <div class="align-self-end text-center">{{ mars_db.mars_fact }}</div>
+            <div class="align-self-end text-center">{{ data.mars_fact|safe }}</div>
           </div>
         </div>
         <br>
@@ -37,7 +37,7 @@
             <h1><strong>Mars Hemispheres</strong></h1>
           </div>
           <div class="row">
-              {% for image in mars_db.hemisphere_titles %}
+              {% for image in data.hemisphere_titles %}
     
               <div class="col-md-6 text-center">
                 <div class="card-group">
