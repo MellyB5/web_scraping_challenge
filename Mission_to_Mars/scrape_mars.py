@@ -67,7 +67,7 @@ def update():
     hemisphere_urls = []
 
     for item in hemi_items:
-        hemisphere_urls.append(f"{hemi_url}{hemi_items.find('a', class_='itemLink')['href']}")
+        hemisphere_urls.append(f"{hemi_url}{item.find('a', class_='itemLink')['href']}")
 
     print(hemisphere_urls)
 
@@ -105,7 +105,7 @@ def update():
     mars_data = {
         "news_title": news_title,
         "news_p": news_p,
-        "featured img": featured_image_url,
+        "featured_img": featured_image_url,
         "mars_facts": html_table,
         "hemi_images": hemisphere_titles
     }

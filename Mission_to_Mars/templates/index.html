@@ -22,11 +22,11 @@
         <div class="row">
           <div class="col-md-6 align-self-start">
             <h2><strong>Featured Mars Image</strong></h2>
-            <img src={{ data.featured_image_url }} alt="Mars Featured Image">
+            <img src="{{ data.featured_img }}" alt="Mars Featured Image">
           </div>
           <div class="col-md-6 align-self-end text-center">
             <h2><strong>Mars Facts</strong></h2>
-            <div class="align-self-end text-center">{{ data.mars_fact|safe }}</div>
+            <div class="align-self-end text-center">{{ data.mars_facts|safe }}</div>
           </div>
         </div>
         <br>
@@ -37,12 +37,12 @@
             <h1><strong>Mars Hemispheres</strong></h1>
           </div>
           <div class="row">
-              {% for image in data.hemisphere_titles %}
+              {% for image in data.hemi_images %}
     
               <div class="col-md-6 text-center">
                 <div class="card-group">
                   <div class="card">
-                    <img src="{{ image.img_url }}" class="card-img-top" alt="..." style="width:400px">
+                    <img src="{{ image.img }}" class="card-img-top" alt="..." style="width:400px">
                     <div class="card-body">
                       <h5 class="card-title">{{ image.title }}</h5>
                     </div>
